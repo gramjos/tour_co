@@ -5,7 +5,7 @@ class TextSection extends StatelessWidget {
   final String _body;
   static const double _hPad = 16.0;
 
-  TextSection(this._title, this._body);
+  const TextSection(this._title, this._body, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

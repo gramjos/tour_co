@@ -1,18 +1,18 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
 import '../../app.dart';
 import '../../models/location.dart';
 
 class Locations extends StatelessWidget {
+  const Locations({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final locations = Location.fetchAll();
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Locations'),
-        ),
+        title: const Text('Locations'),
+      ),
       body: ListView(
           children: locations
               .map((local) => GestureDetector(
@@ -24,7 +24,7 @@ class Locations extends StatelessWidget {
   }
 
   void _onLocationTap(BuildContext context, int localID) {
-    Navigator.pushNamed(context, LocationDetailRoute,
+    Navigator.pushNamed(context, locationDetailRoute,
         arguments: {"id": localID});
   }
 }

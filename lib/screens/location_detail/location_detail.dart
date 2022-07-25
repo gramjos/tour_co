@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
-
 import 'package:flutter/material.dart';
 import 'image_banner.dart';
 import 'text_section.dart';
@@ -7,7 +5,7 @@ import '../../models/location.dart';
 
 class LocationDetail extends StatelessWidget {
   final int _locationID;
-  LocationDetail(this._locationID);
+  const LocationDetail(this._locationID, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
