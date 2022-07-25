@@ -39,10 +39,10 @@ class App extends StatelessWidget {
 
   ThemeData _theme() {
     return ThemeData(
-        appBarTheme: const AppBarTheme(titleTextStyle: AppBarTextStyle),
+        appBarTheme: const AppBarTheme(titleTextStyle: appBarTextStyle),
         textTheme: const TextTheme(
-          headline1: TitleTextStyle,
-          bodyText1: Body1TextStyle,
+          headline1: titleTextStyle,
+          bodyText1: body1TextStyle,
         ));
   }
 }
