@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../app.dart';
 import '../../models/location.dart';
+import '../../widgets/image_banner.dart';
 
 class Locations extends StatelessWidget {
   const Locations({Key? key}) : super(key: key);
@@ -11,15 +12,20 @@ class Locations extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Locations'),
+        title: const Text('Locations: list of links'),
       ),
-      body: ListView(
-          children: locations
-              .map((local) => GestureDetector(
-                    child: Text(local.name),
-                    onTap: () => _onLocationTap(context, local.id),
-                  ))
-              .toList()),
+      body: ListView.builder(
+        itemCount: locations.length,
+        itemBuilder: (context, index) =>
+            _itemBuilder(context, locations[index]),
+      ),
+    );
+  }
+
+  Widget _itemBuilder(BuildContext context, Location location) {
+    return GestureDetector(
+      onTap: () => _onLocationTap(context, location.id),
+      child: ImageBanner(location.imagePath),
     );
   }
 
