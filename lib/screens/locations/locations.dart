@@ -12,20 +12,45 @@ class Locations extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Locations: list of links'),
+        title: const Text('Locations: pick n click'),
       ),
       body: ListView.builder(
         itemCount: locations.length,
         itemBuilder: (context, index) =>
             _itemBuilder(context, locations[index]),
       ),
+      backgroundColor: const Color.fromARGB(255, 237, 209, 0),
     );
   }
 
   Widget _itemBuilder(BuildContext context, Location location) {
     return GestureDetector(
       onTap: () => _onLocationTap(context, location.id),
-      child: ImageBanner(location.imagePath),
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(2, 2, 2, 0),
+        child: SizedBox(
+          height: 200,
+          width: 200,
+          child: Column(
+            children: <Widget>[
+              Container(
+                alignment: Alignment.topCenter,
+                height: 25,
+                width: 150,
+                color: const Color.fromARGB(255, 250, 1, 1),
+                child: Text(location.name),
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                alignment: Alignment.bottomCenter,
+                color: const Color.fromARGB(255, 30, 1, 250),
+                child: ImageBanner(location.preImagePath),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'screens/locations/locations.dart';
 import 'screens/location_detail/location_detail.dart';
+import 'screens/home/start_page.dart';
 import 'style.dart';
 
-const String locationRoute = '/';
-const String locationDetailRoute = '/location_detail';
+const String hom = '/';
+const String locationRoute = '/locations';
+const String locationDetailRoute = '/locations/location_detail';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -24,6 +26,9 @@ class App extends StatelessWidget {
           settings.arguments as Map<String, dynamic>?;
       Widget screen;
       switch (settings.name) {
+        case hom:
+          screen = const StartPage();
+          break;
         case locationRoute:
           screen = const Locations();
           break;
