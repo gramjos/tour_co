@@ -27,7 +27,7 @@ class App extends StatelessWidget {
       Widget screen;
       switch (settings.name) {
         case hom:
-          screen = const StartPage();
+          screen = StartPage();
           break;
         case locationRoute:
           screen = const Locations();
@@ -44,10 +44,11 @@ class App extends StatelessWidget {
 
   ThemeData _theme() {
     return ThemeData(
-        appBarTheme: const AppBarTheme(titleTextStyle: appBarTextStyle),
-        textTheme: const TextTheme(
-          headline1: titleTextStyle,
-          bodyText1: body1TextStyle,
-        ));
+      appBarTheme: const AppBarTheme(titleTextStyle: appBarTextStyle),
+      textTheme: const TextTheme(
+        headline1: titleTextStyle,
+        bodyText1: body1TextStyle,
+      ),
+    );
   }
 }
