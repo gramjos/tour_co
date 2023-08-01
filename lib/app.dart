@@ -46,8 +46,8 @@ class App extends StatelessWidget {
     return ThemeData(
       appBarTheme: const AppBarTheme(titleTextStyle: appBarTextStyle),
       textTheme: const TextTheme(
-        headline1: titleTextStyle,
-        bodyText1: body1TextStyle,
+        displayLarge: titleTextStyle,
+        bodyLarge: body1TextStyle,
       ),
     );
   }

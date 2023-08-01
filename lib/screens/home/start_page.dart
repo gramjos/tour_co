@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:tour_co/models/like_count.dart';
 import 'package:tour_co/scoped_models/scoped_like_count.dart';
 import 'package:tour_co/screens/home/dynamic_liking.dart';
 

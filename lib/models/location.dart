@@ -22,7 +22,7 @@ class Location {
           2,
           'Space and time_2',
           'assets/images/Milwaukee_spatial_distribu.png',
-          'assets/images/pre_Milwaukee_spatial_distribu.jpeg', [
+          'assets/images/Milwaukee_spatial_distribu.png', [
         LocationFact('Summary',
             'While we could go on about the ethereal glow and seemingly endless heights of this bamboo grove on the outskirts of Kyoto, the sight\'s pleasures extend beyond the visual realm.'),
         LocationFact('How to Get There',
