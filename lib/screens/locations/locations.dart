@@ -4,15 +4,16 @@ import '../../models/location.dart';
 import '../../widgets/image_banner.dart';
 
 class Locations extends StatelessWidget {
-  const Locations({Key? key}) : super(key: key);
+  final int _likes;
+  const Locations(this._likes, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final locations = Location.fetchAll();
-
+    String mes = 'Locations: pick n click $_likes?';
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Locations: pick n click'),
+        title: Text(mes),
       ),
       body: ListView.builder(
         itemCount: locations.length,

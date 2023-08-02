@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:tour_co/app.dart';
 import 'package:tour_co/scoped_models/scoped_like_count.dart';
 import 'package:tour_co/screens/home/dynamic_liking.dart';
 
@@ -20,10 +21,7 @@ class StartPage extends StatelessWidget {
           children: <Widget>[
             Center(
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/locations',
-                      arguments: {"ct": likeCounter});
-                },
+                onPressed: () => _passLikes(context, likeCounter.lc.likeCT),
                 child: const Text('go to item list'),
               ),
             ),
@@ -44,7 +42,11 @@ class StartPage extends StatelessWidget {
     );
   }
 
+  void _passLikes(BuildContext context, int likes) {
+    Navigator.pushNamed(context, locationRoute, arguments: {"likes": likes});
+  }
+
   void pressButton() {
-    print("activat the button");
+    print("activated the button :)");
   }
 }

@@ -30,7 +30,7 @@ class App extends StatelessWidget {
           screen = StartPage();
           break;
         case locationRoute:
-          screen = const Locations();
+          screen = Locations(arguments!['likes']);
           break;
         case locationDetailRoute:
           screen = LocationDetail(arguments!['id']);
