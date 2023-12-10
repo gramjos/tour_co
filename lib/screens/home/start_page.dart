@@ -15,14 +15,14 @@ class StartPage extends StatelessWidget {
       model: likeCounter,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('a home page'),
+          title: const Text('Graham J. Joseph'),
         ),
         body: Column(
           children: <Widget>[
             Center(
               child: ElevatedButton(
                 onPressed: () => _passLikes(context, likeCounter.lc.likeCT),
-                child: const Text('go to item list'),
+                child: const Text('See Graham\'s work'),
               ),
             ),
             const Center(

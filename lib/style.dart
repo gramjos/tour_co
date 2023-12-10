@@ -10,7 +10,7 @@ const appBarTextStyle = TextStyle(
   fontFamily: fontNameDefault,
   fontWeight: FontWeight.w300,
   fontSize: mediumTextSize,
-  color: Colors.white,
+  color: Color.fromARGB(255, 138, 251, 162),
 );
 
 const titleTextStyle = TextStyle(
@@ -24,5 +24,5 @@ const body1TextStyle = TextStyle(
   fontFamily: fontNameDefault,
   fontWeight: FontWeight.w300,
   fontSize: bodyTextSize,
-  color: Color.fromARGB(255, 8, 0, 241),
+  color: Color.fromARGB(255, 233, 0, 241),
 );
