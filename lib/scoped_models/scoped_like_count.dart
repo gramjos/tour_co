@@ -4,9 +4,9 @@ import 'package:scoped_model/scoped_model.dart';
 class ScopedLikeCount extends Model {
   LikeCount lc = LikeCount();
 
-  increment(){
-    lc.likeCT += 1 ; 
+  increment() {
+    lc.likeCT += 1;
 
-    notifyListeners(); 
+    notifyListeners();
   }
 }

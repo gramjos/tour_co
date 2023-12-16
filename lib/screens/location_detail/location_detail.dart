@@ -5,7 +5,7 @@ import '../../models/location.dart';
 
 class LocationDetail extends StatelessWidget {
   final int _locationID;
-  const LocationDetail(this._locationID, {Key? key}) : super(key: key);
+  const LocationDetail(this._locationID, {super.key});
 
   @override
   Widget build(BuildContext context) {

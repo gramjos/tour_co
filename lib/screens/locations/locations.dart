@@ -5,7 +5,7 @@ import '../../widgets/image_banner.dart';
 
 class Locations extends StatelessWidget {
   final int _likes;
-  const Locations(this._likes, {Key? key}) : super(key: key);
+  const Locations(this._likes, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class Locations extends StatelessWidget {
         itemBuilder: (context, index) =>
             _itemBuilder(context, locations[index]),
       ),
-      backgroundColor: const Color.fromARGB(255, 237, 209, 0),
+      backgroundColor: const Color.fromARGB(255, 8, 162, 0),
     );
   }
 
@@ -38,7 +38,7 @@ class Locations extends StatelessWidget {
                 alignment: Alignment.topCenter,
                 height: 25,
                 width: 150,
-                color: const Color.fromARGB(255, 250, 1, 1),
+                color: const Color.fromARGB(255, 167, 240, 84),
                 child: Text(location.name),
               ),
               Container(

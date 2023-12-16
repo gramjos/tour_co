@@ -3,7 +3,7 @@ import 'package:scoped_model/scoped_model.dart';
 import '../../scoped_models/scoped_like_count.dart';
 
 class DynamicLiking extends StatelessWidget {
-  const DynamicLiking({Key? key}) : super(key: key);
+  const DynamicLiking({super.key});
 
   @override
   Widget build(BuildContext context) {

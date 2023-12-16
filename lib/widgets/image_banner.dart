@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ImageBanner extends StatelessWidget {
   final String assetPath;
 
-  const ImageBanner(this.assetPath, {Key? key}) : super(key: key);
+  const ImageBanner(this.assetPath, {super.key});
 
   @override
   Widget build(BuildContext context) {
