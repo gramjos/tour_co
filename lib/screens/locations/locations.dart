@@ -10,7 +10,9 @@ class Locations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final locations = Location.fetchAll();
-    String mes = 'Locations: pick n click $_likes?';
+    String mes = _likes > 1
+        ? 'Thanks for $_likes likes :)'
+        : 'Thanks for $_likes like :)';
     return Scaffold(
       appBar: AppBar(
         title: Text(mes),
@@ -30,8 +32,8 @@ class Locations extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.fromLTRB(2, 2, 2, 0),
         child: SizedBox(
-          height: 200,
-          width: 200,
+          height: 400,
+          width: 400,
           child: Column(
             children: <Widget>[
               Container(
@@ -42,8 +44,8 @@ class Locations extends StatelessWidget {
                 child: Text(location.name),
               ),
               Container(
-                height: 100,
-                width: 100,
+                height: 300,
+                width: 300,
                 alignment: Alignment.bottomCenter,
                 color: const Color.fromARGB(255, 30, 1, 250),
                 child: ImageBanner(location.preImagePath),

@@ -12,7 +12,7 @@ class Location {
   static List<Location> fetchAll() {
     return [
       Location(1, 'Space and time', 'assets/images/inc_tri.png',
-          'assets/images/pre_inc_tri.jpeg', [
+          'assets/images/bug_in_box.png', [
         LocationFact('Summary',
             'While we could go on about the ethereal glow and seemingly endless heights of this bamboo grove on the outskirts of Kyoto, the sight\'s pleasures extend beyond the visual realm.'),
         LocationFact('How to Get There',
