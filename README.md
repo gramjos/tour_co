@@ -1,3 +1,7 @@
+# TODO
+- dynamic size all pages. Pass screen size from size to screen.
+    - resize text section too
+
 # tour_co
 
 A new Flutter project.

@@ -8,8 +8,12 @@ class DynamicLiking extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScopedModelDescendant<ScopedLikeCount>(
-      builder: ((context, child, model) =>
-          Text("the accounting of likes: ${model.lc.likeCT}")),
+      builder: (context, child, model) {
+        StringBuffer mes = StringBuffer();
+        mes.write("the accounting of likes: ${model.lc.likeCT}\n");
+        mes.write("On my picture :) ${model.lc.name}");
+        return Text(mes.toString());
+      },
     );
   }
 }

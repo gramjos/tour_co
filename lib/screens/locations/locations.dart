@@ -39,7 +39,7 @@ class Locations extends StatelessWidget {
               Container(
                 alignment: Alignment.topCenter,
                 height: 25,
-                width: 150,
+                width: 250,
                 color: const Color.fromARGB(255, 167, 240, 84),
                 child: Text(location.name),
               ),

@@ -9,4 +9,13 @@ class ScopedLikeCount extends Model {
 
     notifyListeners();
   }
+
+  toggle() {
+    if (lc.name.isEmpty) {
+      lc.name = "Graham J. Joss";
+    } else {
+      lc.name = "";
+    }
+    notifyListeners();
+  }
 }
