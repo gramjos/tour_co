@@ -11,31 +11,25 @@ class Location {
 
   static List<Location> fetchAll() {
     return [
-      Location(1, 'Poetry - i trapped a bug in a box',
-          'assets/images/the_bug.png', 'assets/images/bug_in_box.png', [
+      Location(1, 'i trapped a bug in a box', 'assets/images/the_bug.png',
+          'assets/images/bug_in_box.png', [
         LocationFact('i trapped a bug in a box', """
 
-i trapped a bug in a box and i hear it knock
-from within a cardboard box.
+i trapped a bug in a box and i hear it knock from within a cardboard box.
 
-As I stare thru a screen it gave me a spook when
-i saw it there
+as I stare thru a screen it gave me a spook when i saw it there
 
-i waited for the harm to dissipate and decided it 
-did belong in my line of sight.
+i waited for the harm to dissipate and decided it did belong in my line of sight.
 
-It wrestles inside its enclosure wrapped in
-darkness as it knocks
+It wrestles inside its enclosure wrapped in darkness as it knocks this bug knocks as i scoff and mock 
 
-this bug knocks as i scoff and mock 
+i sit here listening to the petitioning bug knock, unclear will it ever disappear
 
-i sit here listening to the petitioning bug knock,
-unclear will it ever disappear
+it was decided since our fates collided our mate will not resuscitate  
 
-it was decided since our fates collided our mate will
-not resuscitate  
+as the bug pleas i am carefree, all bugs die around me
 
-as the bug pleas i am carefree, all bugs die around me """),
+ """),
       ]),
       Location(
           2,

@@ -3,10 +3,13 @@ import 'package:tour_co/screens/resume/resume.dart';
 import 'screens/locations/locations.dart';
 import 'screens/location_detail/location_detail.dart';
 import 'screens/home/start_page.dart';
+import 'screens/math_comp/para.dart';
 import 'style.dart';
 
 const String hom = '/';
 const String resumeRoute = '/resume';
+const String matCompRoute = '/matComp';
+const String art_egypt = '/egypt';
 const String locationRoute = '/locations';
 const String locationDetailRoute = '/locations/location_detail';
 
@@ -36,6 +39,9 @@ class App extends StatelessWidget {
           break;
         case resumeRoute:
           screen = const PDFViewerPage(path: 'assets/images/resume.pdf');
+          break;
+        case matCompRoute:
+          screen = const ExampleParallax();
           break;
         case locationDetailRoute:
           screen = LocationDetail(arguments!['id']);

@@ -39,6 +39,9 @@ dependencies:
   syncfusion_flutter_pdfviewer: ^23.2.7
   path_provider: ^2.1.1
   http: ^1.1.0
+  permission_handler: ^11.0.1
+  dio: ^5.4.0
+  universal_html: ^2.2.4
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +87,14 @@ flutter:
           weight: 300
         - asset: assets/fonts/Montserrat-Bold.ttf
           weight: 300
+    - family: IMFellDoublePicaSC
+      fonts:
+        - asset: assets/fonts/IMFellDoublePicaSC-Regular.ttf
+          weight: 300
+    - family: Tourney
+      fonts:
+        - asset: assets/fonts/Tourney-Regular.ttf
+  
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

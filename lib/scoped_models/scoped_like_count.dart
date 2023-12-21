@@ -12,7 +12,7 @@ class ScopedLikeCount extends Model {
 
   toggle() {
     if (lc.name.isEmpty) {
-      lc.name = "Graham J. Joss";
+      lc.name = "👀";
     } else {
       lc.name = "";
     }
