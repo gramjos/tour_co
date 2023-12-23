@@ -1,6 +1,12 @@
 # TODO
-- dynamic size all pages. Pass screen size from size to screen.
-    - resize text section too
+- [ ] dynamic size all pages. Pass screen size from size to screen.
+    - [ ] resize text section too
+- [ ] set up an automatic flow for article posting
+- [ ] the clickable region in the para page is too big
+- [ ] pushing the limits of a stateless application
+    - [ ] page transition
+    - [ ] scope model updates
+- [ ] Search for articles by name, contents, and tags
 
 # tour_co
 

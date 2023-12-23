@@ -12,7 +12,7 @@ class Location {
 
 const locations = [
   Location(
-    name: 'Mount Rushmore',
+    name: 'Thatcher Woods',
     place: 'U.S.A',
     imageUrl: 'wetForest.jpeg',
   ),
