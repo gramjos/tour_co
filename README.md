@@ -1,11 +1,16 @@
 # TODO
+### ALL
 - [ ] dynamic size all pages. Pass screen size from size to screen.
     - [ ] resize text section too
 - [ ] set up an automatic flow for article posting
-- [ ] the clickable region in the para page is too big
 - [ ] pushing the limits of a stateless application
     - [ ] page transition
     - [ ] scope model updates
+- [ ] URL paths for each page
+- [ ] give photo credit to http://aurelm.com/portfolio/aurel-manea-photo-archive/
+### Parallax Page
+- [x] the clickable region in the para page is too big
+- [ ] resize pictures on the para page. Para effect seems to not on some pic. I think i just need large pictures.
 - [ ] Search for articles by name, contents, and tags
 
 # tour_co
