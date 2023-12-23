@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:tour_co/screens/home/platform_info.dart';
 import 'package:tour_co/screens/home/start_page.dart';
+import 'package:tour_co/screens/math_comp/location.dart';
+import 'package:tour_co/style.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 
@@ -17,13 +19,14 @@ class ExampleParallax extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Artist'),
+        backgroundColor: matte,
       ),
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 245, 208, 99),
-              Color.fromARGB(255, 255, 255, 255),
+              startScreenButton,
+              matte,
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -35,9 +38,9 @@ class ExampleParallax extends StatelessWidget {
             slivers: <Widget>[
               SliverAppBar(
                 title: const Text(
-                  'SliverAppBar',
+                  '🐒',
                   style: TextStyle(
-                    color: Colors.red,
+                    color: Colors.white,
                     fontSize: 50,
                     fontWeight: FontWeight.bold, // Make the text bold
                     shadows: [
@@ -49,7 +52,7 @@ class ExampleParallax extends StatelessWidget {
                     ],
                   ),
                 ),
-                backgroundColor: const Color.fromARGB(255, 173, 237, 175),
+                backgroundColor: startScreenBackgroundColor,
                 expandedHeight: 200.0,
                 flexibleSpace: FlexibleSpaceBar(
                   background: Image.asset('assets/images/mush_eco.png',
@@ -131,11 +134,8 @@ class LocationListItem extends StatelessWidget {
         backgroundImageKey: _backgroundImageKey,
       ),
       children: [
-        Image.network(
-          imageUrl,
-          key: _backgroundImageKey,
-          fit: BoxFit.cover,
-        ),
+        Image.asset('assets/images/$imageUrl',
+            key: _backgroundImageKey, fit: BoxFit.fill),
       ],
     );
   }
@@ -357,55 +357,3 @@ class RenderParallax extends RenderBox
             Offset(0.0, childRect.top));
   }
 }
-
-class Location {
-  const Location({
-    required this.name,
-    required this.place,
-    required this.imageUrl,
-  });
-
-  final String name;
-  final String place;
-  final String imageUrl;
-}
-
-const urlPrefix =
-    'https://docs.flutter.dev/cookbook/img-files/effects/parallax';
-const locations = [
-  Location(
-    name: 'Mount Rushmore',
-    place: 'U.S.A',
-    imageUrl: '$urlPrefix/01-mount-rushmore.jpg',
-  ),
-  Location(
-    name: 'Gardens By The Bay',
-    place: 'Singapore',
-    imageUrl: '$urlPrefix/02-singapore.jpg',
-  ),
-  Location(
-    name: 'Machu Picchu',
-    place: 'Peru',
-    imageUrl: '$urlPrefix/03-machu-picchu.jpg',
-  ),
-  Location(
-    name: 'Vitznau',
-    place: 'Switzerland',
-    imageUrl: '$urlPrefix/04-vitznau.jpg',
-  ),
-  Location(
-    name: 'Bali',
-    place: 'Indonesia',
-    imageUrl: '$urlPrefix/05-bali.jpg',
-  ),
-  Location(
-    name: 'Mexico City',
-    place: 'Mexico',
-    imageUrl: '$urlPrefix/06-mexico-city.jpg',
-  ),
-  Location(
-    name: 'Cairo',
-    place: 'Egypt',
-    imageUrl: '$urlPrefix/07-cairo.jpg',
-  ),
-];

@@ -9,7 +9,7 @@ import 'style.dart';
 const String hom = '/';
 const String resumeRoute = '/resume';
 const String matCompRoute = '/matComp';
-const String art_egypt = '/egypt';
+const String artEgypt = '/egypt';
 const String locationRoute = '/locations';
 const String locationDetailRoute = '/locations/location_detail';
 
