@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:tour_co/screens/home/platform_info.dart';
-import 'package:tour_co/screens/home/start_page.dart';
 import 'package:tour_co/screens/math_comp/location.dart';
 import 'package:tour_co/screens/math_comp/location_list_item.dart';
 import 'package:tour_co/style.dart';
@@ -38,12 +37,14 @@ class ExampleParallax extends StatelessWidget {
           child: CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
+                automaticallyImplyLeading:
+                    false, //turn off the back button in silver area
                 title: const Text(
                   '🐒',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 50,
-                    fontWeight: FontWeight.bold, // Make the text bold
+                    fontWeight: FontWeight.bold,
                     shadows: [
                       Shadow(
                         color: Color.fromARGB(255, 255, 255, 255),
@@ -64,6 +65,12 @@ class ExampleParallax extends StatelessWidget {
                 itemExtent: 250.0,
                 delegate: SliverChildListDelegate(
                   [
+                    const Center(
+                      child: Text(
+                        "Welcome to my portfolio!\nHere is an interesting page about me!\n\"To be alive is to risk it all\"\n\t       -Rick C-137",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                    ),
                     for (final location in locations)
                       LocationListItem(
                         imageUrl: location.imageUrl,

@@ -5,11 +5,13 @@ class Cols {
   static const Color black = Color.fromARGB(255, 0, 0, 0);
 }
 
+Color get picFrame => const Color.fromARGB(
+    255, 117, 233, 165); // Pic Frame, App Bar, and Welcome Text Area
 Color get matte => const Color.fromARGB(
-    255, 255, 178, 127); // Pic Frame, App Bar, and Welcome Text Area
+    255, 222, 255, 236); // Pic Frame, App Bar, and Welcome Text Area
 Color get startScreenButton => const Color.fromARGB(255, 122, 255, 213);
 Color get startScreenBackgroundColor =>
-    const Color.fromARGB(255, 142, 246, 255);
+    const Color.fromARGB(255, 212, 251, 255);
 
 const largeTextSize = 26.0;
 const mediumTextSize = 20.0;

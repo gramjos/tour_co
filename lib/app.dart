@@ -7,6 +7,7 @@ import 'screens/math_comp/para.dart';
 import 'style.dart';
 
 const String hom = '/';
+const String homie = '/homie';
 const String resumeRoute = '/resume';
 const String matCompRoute = '/matComp';
 const String artEgypt = '/egypt';
@@ -20,37 +21,40 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      onGenerateRoute: _routes(),
+      initialRoute: '/',
+      onGenerateRoute: _onRoutes,
       theme: _theme(),
     );
   }
 
-  RouteFactory _routes() {
-    return (settings) {
-      final Map<String, dynamic>? arguments =
-          settings.arguments as Map<String, dynamic>?;
-      Widget screen;
-      switch (settings.name) {
-        case hom:
-          screen = StartPage();
-          break;
-        case locationRoute:
-          screen = Locations(arguments!['likes']);
-          break;
-        case resumeRoute:
-          screen = const PDFViewerPage(path: 'assets/images/resume.pdf');
-          break;
-        case matCompRoute:
-          screen = const ExampleParallax();
-          break;
-        case locationDetailRoute:
-          screen = LocationDetail(arguments!['id']);
-          break;
-        default:
-          return null;
-      }
-      return MaterialPageRoute(builder: (BuildContext context) => screen);
-    };
+  Route<dynamic> _onRoutes(RouteSettings settings) {
+    final Map<String, dynamic>? arguments =
+        settings.arguments as Map<String, dynamic>?;
+    Widget screen;
+    switch (settings.name) {
+      case hom:
+        // case homie:
+        screen = StartPage();
+        break;
+      case locationRoute:
+        screen = Locations(arguments!['likes']);
+        break;
+      case resumeRoute:
+        screen = const PDFViewerPage(path: 'assets/images/resume.pdf');
+        break;
+      case matCompRoute:
+        screen = const ExampleParallax();
+        break;
+      case locationDetailRoute:
+        screen = LocationDetail(arguments!['id']);
+        break;
+      default:
+        throw Exception('Invalid route: ${settings.name}');
+    }
+    return MaterialPageRoute<dynamic>(
+      builder: (_) => screen,
+      settings: settings,
+    );
   }
 
   ThemeData _theme() {

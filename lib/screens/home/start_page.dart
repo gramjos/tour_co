@@ -1,9 +1,9 @@
+import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:tour_co/app.dart';
 import 'package:tour_co/scoped_models/scoped_like_count.dart';
-import 'package:tour_co/scoped_models/scoped_pic_change.dart';
 import 'package:tour_co/screens/home/dynamic_liking.dart';
 import 'package:tour_co/screens/home/platform_info.dart';
 import 'package:tour_co/style.dart';
@@ -12,7 +12,6 @@ class StartPage extends StatelessWidget {
   StartPage({super.key});
 
   final ScopedLikeCount likeCounter = ScopedLikeCount();
-  final ScopedPicChange picChanger = ScopedPicChange();
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +43,9 @@ class StartPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const SizedBox(
+              height: 9,
+            ),
             Row(
               children: [
                 const SizedBox(
@@ -51,26 +53,23 @@ class StartPage extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    const SizedBox(
-                      height: 9,
-                    ),
                     MouseRegion(
                       onEnter: (PointerEnterEvent event) {
-                        print('Mouse entered');
+                        final logger = Logger();
+                        logger.d("logging here");
                         likeCounter.toggle();
-                        picChanger.togglePic();
                       },
                       onExit: (PointerExitEvent event) {
-                        print('Mouse exited');
+                        final logger = Logger();
+                        logger.d("logging here");
                         likeCounter.toggle();
-                        picChanger.togglePic();
                       },
                       child: Container(
                         decoration: BoxDecoration(
                           // add border
                           border: Border.all(
                             width: 19,
-                            color: matte,
+                            color: startScreenButton,
                           ),
                           // set border radius
                           borderRadius: BorderRadius.circular(40),
@@ -89,6 +88,9 @@ class StartPage extends StatelessWidget {
                 Expanded(
                   child: Column(
                     children: [
+                      const SizedBox(
+                        height: 9,
+                      ),
                       Container(
                         color: matte,
                         padding: const EdgeInsets.all(8.0),
@@ -138,8 +140,7 @@ class StartPage extends StatelessWidget {
                         },
                         child: const Text('Poetry'),
                       ),
-                      const SizedBox(height: 8),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 16),
                     ],
                   ),
                 ),
@@ -198,6 +199,8 @@ class StartPage extends StatelessWidget {
   }
 
   void pressButton() {
-    print("activated the button :)");
+    final logger = Logger();
+
+    logger.d("activated the button :)");
   }
 }
