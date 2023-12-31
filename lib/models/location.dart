@@ -1,4 +1,4 @@
-import 'location_fact.dart';
+import '../screens/tech_article_list/article/location_fact.dart';
 
 class Location {
   final int id;

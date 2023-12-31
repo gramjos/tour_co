@@ -22,16 +22,7 @@ class ExampleParallax extends StatelessWidget {
         backgroundColor: matte,
       ),
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              startScreenButton,
-              matte,
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
+        decoration: gradientBoxDec,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: pSpace),
           child: CustomScrollView(

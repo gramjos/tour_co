@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+import 'package:tour_co/style.dart';
 import 'package:universal_html/html.dart' as html;
 
 class PDFViewerPage extends StatelessWidget {
@@ -11,7 +12,7 @@ class PDFViewerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 0, 130, 30),
+        backgroundColor: matte,
         title: const Text('Graham J. Joss'),
       ),
       body: Center(
@@ -20,6 +21,7 @@ class PDFViewerPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: startScreenButton,
         tooltip: 'Download from Github',
         onPressed: () {
           showDialog(
@@ -60,7 +62,7 @@ class PDFViewerPage extends StatelessWidget {
             },
           );
         },
-        child: const Icon(Icons.download_sharp),
+        child: const Icon(Icons.download_sharp, color: Cols.black),
       ),
     );
   }

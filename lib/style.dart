@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
 
+BoxDecoration gradientBoxDec = BoxDecoration(
+  gradient: LinearGradient(
+    colors: [
+      pastelPurp,
+      matte,
+    ],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+  ),
+);
+
 class Cols {
   static const Color heartOutline = Color.fromARGB(255, 255, 0, 0);
   static const Color black = Color.fromARGB(255, 0, 0, 0);
 }
 
-Color get picFrame => const Color.fromARGB(
-    255, 117, 233, 165); // Pic Frame, App Bar, and Welcome Text Area
 Color get matte => const Color.fromARGB(
-    255, 222, 255, 236); // Pic Frame, App Bar, and Welcome Text Area
+    255, 252, 233, 187); // App Bar, and Welcome Text Area, footer
 Color get startScreenButton => const Color.fromARGB(255, 122, 255, 213);
 Color get startScreenBackgroundColor =>
     const Color.fromARGB(255, 212, 251, 255);
+Color get pastelPurp => const Color.fromARGB(255, 223, 182, 255);
 
 const largeTextSize = 26.0;
 const mediumTextSize = 20.0;

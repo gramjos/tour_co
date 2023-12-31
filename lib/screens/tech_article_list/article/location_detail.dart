@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../widgets/image_banner.dart';
-import 'text_section.dart';
-import '../../models/location.dart';
+import 'package:tour_co/style.dart';
+import '../../../widgets/image_banner.dart';
+import '../text_section.dart';
+import '../../../models/location.dart';
 
 class LocationDetail extends StatelessWidget {
   final int _locationID;
@@ -14,15 +15,20 @@ class LocationDetail extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(location!.name),
+        backgroundColor: matte,
       ),
       body: SingleChildScrollView(
-        child: Column(
+        child: Container(
+          decoration: gradientBoxDec,
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ImageBanner(location.imagePath),
               ...textSections(location),
-            ]),
+            ],
+          ),
+        ),
       ),
     );
   }

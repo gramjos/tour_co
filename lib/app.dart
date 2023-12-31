@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tour_co/screens/resume/resume.dart';
-import 'screens/locations/locations.dart';
-import 'screens/location_detail/location_detail.dart';
+import 'screens/tech_article_list/article_list.dart';
+import 'screens/tech_article_list/article/location_detail.dart';
 import 'screens/home/start_page.dart';
 import 'screens/math_comp/para.dart';
 import 'style.dart';
@@ -37,7 +37,7 @@ class App extends StatelessWidget {
         screen = StartPage();
         break;
       case locationRoute:
-        screen = Locations(arguments!['likes']);
+        screen = ArticleList(arguments!['likes']);
         break;
       case resumeRoute:
         screen = const PDFViewerPage(path: 'assets/images/resume.pdf');

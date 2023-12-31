@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:tour_co/style.dart';
 import '../../app.dart';
 import '../../models/location.dart';
 import '../../widgets/image_banner.dart';
 
-class Locations extends StatelessWidget {
+class ArticleList extends StatelessWidget {
   final int _likes;
-  const Locations(this._likes, {super.key});
+  const ArticleList(this._likes, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +17,16 @@ class Locations extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(mes),
+        backgroundColor: matte,
       ),
-      body: ListView.builder(
-        itemCount: locations.length,
-        itemBuilder: (context, index) =>
-            _itemBuilder(context, locations[index]),
+      body: Container(
+        decoration: gradientBoxDec,
+        child: ListView.builder(
+          itemCount: locations.length,
+          itemBuilder: (context, index) =>
+              _itemBuilder(context, locations[index]),
+        ),
       ),
-      backgroundColor: const Color.fromARGB(255, 8, 162, 0),
     );
   }
 
@@ -40,7 +44,7 @@ class Locations extends StatelessWidget {
                 alignment: Alignment.topCenter,
                 height: 25,
                 width: 250,
-                color: const Color.fromARGB(255, 167, 240, 84),
+                color: startScreenButton,
                 child: Text(location.name),
               ),
               Container(
