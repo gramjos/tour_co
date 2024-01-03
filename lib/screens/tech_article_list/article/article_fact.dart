@@ -1,7 +1,7 @@
-class LocationFact {
+class ArticleFact {
   final String title;
   final String text;
 
   // short hand auto constructor
-  LocationFact(this.title, this.text);
+  ArticleFact(this.title, this.text);
 }

@@ -1,3 +1,4 @@
+import 'package:universal_html/html.dart' as html;
 import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,15 +27,140 @@ class StartPage extends StatelessWidget {
       backgroundColor: startScreenBackgroundColor,
       appBar: AppBar(
         actions: [
-          IconButton(
-            icon: const Icon(Icons.home),
-            tooltip: 'Show Platform Info',
-            onPressed: () {
-              Navigator.pushNamed(context, matCompRoute);
-            },
+          Padding(
+            padding: const EdgeInsets.only(right: 18.0),
+            child: Tooltip(
+                message: "anything in green is an actionable region",
+                child: IconButton(
+                  icon: const Icon(Icons.info),
+                  onPressed: () => showAboutDialog(
+                    applicationName: "Graham J. Joss Portfolio",
+                    applicationVersion: "0.0.1",
+                    applicationLegalese: "© 2024 Graham J. Joss",
+                    barrierLabel: "About this",
+                    barrierDismissible: true,
+                    barrierColor: Colors.black.withOpacity(0.8),
+                    context: context,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 6,
+                              color: startScreenButton,
+                            ),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(9),
+                            child: Container(
+                              color: pastelPurp,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  color: startScreenBackgroundColor,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(12.0),
+                                          child: Container(
+                                            height: pHeight * (3 / 4),
+                                            width: pWidth * (3 / 4),
+                                            decoration: BoxDecoration(
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.grey
+                                                      .withOpacity(0.5),
+                                                  spreadRadius: 12,
+                                                  blurRadius: 15,
+                                                  offset: const Offset(4,
+                                                      4), // changes position of shadow
+                                                ),
+                                              ],
+                                            ),
+                                            child: Image.asset(
+                                              'assets/images/pro_pic2.jpg',
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 12,
+                                        ),
+                                        Container(
+                                          color: matte,
+                                          child: const Column(
+                                            children: [
+                                              Text(
+                                                "This is a portfolio website for Graham J. Joss.",
+                                                style: TextStyle(fontSize: 24),
+                                              ),
+                                              Text(
+                                                "It is built with Flutter, and is a work in progress",
+                                                style: TextStyle(fontSize: 24),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              color: matte,
+                                              child: const Text(
+                                                "The source code is available at ",
+                                                style: TextStyle(
+                                                  fontSize: 24,
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              color: Colors.white,
+                                              child: GestureDetector(
+                                                onTap: () {
+                                                  final anchor =
+                                                      html.AnchorElement(
+                                                    href:
+                                                        'https://github.com/gramjos/tour_co',
+                                                  )..setAttribute(
+                                                          'target', '_blank');
+                                                  html.document.body!.children
+                                                      .add(anchor);
+                                                  anchor.click();
+                                                  html.document.body!.children
+                                                      .remove(anchor);
+                                                },
+                                                child: const Text(
+                                                  "here",
+                                                  style: TextStyle(
+                                                    fontSize: 24,
+                                                    color: Colors.blue,
+                                                    decoration: TextDecoration
+                                                        .underline,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
           ),
         ],
         backgroundColor: matte,
+        centerTitle: true,
         title: Text(
           'Graham J. Joss',
           style: titleSignature(pFontSize),
@@ -115,7 +241,10 @@ class StartPage extends StatelessWidget {
                         onPressed: () {
                           _passResume(context, likeCounter.lc.likeCT);
                         },
-                        child: const Text('Resume and Cover Letter'),
+                        child: const Tooltip(
+                          message: "View my professional documents",
+                          child: Text('Resume and Cover Letter'),
+                        ),
                       ),
                       const SizedBox(height: 8),
                       ElevatedButton(
@@ -126,8 +255,10 @@ class StartPage extends StatelessWidget {
                         onPressed: () {
                           _passLikes(context, likeCounter.lc.likeCT);
                         },
-                        child:
-                            const Text('Mathematics and Computation Projects'),
+                        child: const Tooltip(
+                          message: "Technical projects",
+                          child: Text('Mathematics and Computation Projects'),
+                        ),
                       ),
                       const SizedBox(height: 8),
                       ElevatedButton(
@@ -136,9 +267,26 @@ class StartPage extends StatelessWidget {
                           foregroundColor: Cols.black,
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, matCompRoute);
+                          Navigator.pushNamed(context, artRoute);
                         },
-                        child: const Text('Poetry'),
+                        child: const Tooltip(
+                          message: "Art never dies",
+                          child: Text('Art'),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: startScreenButton,
+                          foregroundColor: Cols.black,
+                        ),
+                        onPressed: () {
+                          _passTestLikes(context, likeCounter.lc.likeCT);
+                        },
+                        child: const Tooltip(
+                          message: "TDD",
+                          child: Text('testing'),
+                        ),
                       ),
                       const SizedBox(height: 16),
                     ],
@@ -160,7 +308,11 @@ class StartPage extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(platform),
-                    const DynamicLiking(),
+                    const Tooltip(
+                      message:
+                          "Hover over my picture or press the heart\n to see this area change",
+                      child: DynamicLiking(),
+                    ),
                   ],
                 ),
               ),
@@ -195,7 +347,11 @@ class StartPage extends StatelessWidget {
   }
 
   void _passLikes(BuildContext context, int likes) {
-    Navigator.pushNamed(context, locationRoute, arguments: {"likes": likes});
+    Navigator.pushNamed(context, mathCompRoute, arguments: {"likes": likes});
+  }
+
+  void _passTestLikes(BuildContext context, int likes) {
+    Navigator.pushNamed(context, testRoute, arguments: {"likes": likes});
   }
 
   void pressButton() {

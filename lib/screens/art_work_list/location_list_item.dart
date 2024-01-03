@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tour_co/screens/home/start_page.dart';
-import 'package:tour_co/screens/math_comp/para.dart';
+import 'package:tour_co/screens/art_work_list/art_works/egypt.dart';
+import 'package:tour_co/screens/art_work_list/para.dart';
 
 class LocationListItem extends StatelessWidget {
   LocationListItem({
@@ -30,7 +30,7 @@ class LocationListItem extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => StartPage(),
+                    builder: (context) => const WelcomePage(),
                   ),
                 );
               },

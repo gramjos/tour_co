@@ -1,23 +1,23 @@
-import '../screens/tech_article_list/article/article_fact.dart';
+import 'package:tour_co/screens/journal_article_list/journal/journal_fact.dart';
 
-class Location {
+class Journal {
   final int id;
   String name;
   String imagePath;
   String preImagePath;
-  final List<ArticleFact> facts;
+  final List<JournalFact> facts;
 
-  Location(this.id, this.name, this.imagePath, this.preImagePath, this.facts);
+  Journal(this.id, this.name, this.imagePath, this.preImagePath, this.facts);
 
-  static List<Location> fetchAll() {
+  static List<Journal> fetchAll() {
     return [
-      Location(
+      Journal(
         1,
         'i trapped a bug in a box',
         'assets/images/the_bug.png',
         'assets/images/bug_in_box.png',
         [
-          ArticleFact('i trapped a bug in a box', """
+          JournalFact('maybe i trapped a bug in a box', """
 
 i trapped a bug in a box and i hear it knock from within a cardboard box.
 
@@ -36,35 +36,35 @@ as the bug pleas i am carefree, all bugs die around me
  """),
         ],
       ),
-      Location(
+      Journal(
         2,
         'Space and time_2',
         'assets/images/Milwaukee_spatial_distribu.png',
         'assets/images/Milwaukee_spatial_distribu.png',
         [
-          ArticleFact('Summary',
+          JournalFact('Summary',
               'While we could go on about the ethereal glow and seemingly endless heights of this bamboo grove on the outskirts of Kyoto, the sight\'s pleasures extend beyond the visual realm.'),
-          ArticleFact('How to Get There',
+          JournalFact('How to Get There',
               'Kyoto airport, with several terminals, is located 16 kilometres south of the city and is also known as Kyoto. Kyoto can also be reached by transport links from other regional airports.'),
         ],
       ),
-      Location(
+      Journal(
         3,
         'Space and time_3',
         'assets/images/SimpleStaticMobilePage.png',
         'assets/images/pre_SimpleStaticMobilePage.PNG',
         [
-          ArticleFact('Summary',
+          JournalFact('Summary',
               'While we could go on about the ethereal glow and seemingly endless heights of this bamboo grove on the outskirts of Kyoto, the sight\'s pleasures extend beyond the visual realm.'),
-          ArticleFact('How to Get There',
+          JournalFact('How to Get There',
               'Kyoto airport, with several terminals, is located 16 kilometres south of the city and is also known as Kyoto. Kyoto can also be reached by transport links from other regional airports.'),
         ],
       ),
     ];
   }
 
-  static Location? fetchByID(int locationID) {
-    List<Location> l = Location.fetchAll();
+  static Journal? fetchByID(int locationID) {
+    List<Journal> l = Journal.fetchAll();
     for (var i = 0; i < l.length; i++) {
       if (l[i].id == locationID) {
         return l[i];

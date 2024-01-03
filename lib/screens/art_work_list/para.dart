@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:tour_co/screens/home/platform_info.dart';
-import 'package:tour_co/screens/math_comp/location.dart';
-import 'package:tour_co/screens/math_comp/location_list_item.dart';
+import 'package:tour_co/screens/art_work_list/location.dart';
+import 'package:tour_co/screens/art_work_list/location_list_item.dart';
 import 'package:tour_co/style.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
@@ -45,11 +45,16 @@ class ExampleParallax extends StatelessWidget {
                     ],
                   ),
                 ),
-                backgroundColor: startScreenBackgroundColor,
+                backgroundColor: Colors.transparent,
                 expandedHeight: 200.0,
                 flexibleSpace: FlexibleSpaceBar(
-                  background: Image.asset('assets/images/mush_eco.png',
-                      fit: BoxFit.cover),
+                  background: ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: Image.asset(
+                      'assets/images/mush_eco.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               ),
               SliverFixedExtentList(

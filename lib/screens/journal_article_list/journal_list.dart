@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:tour_co/screens/journal_article_list/journal_datum/journal.dart';
 import 'package:tour_co/style.dart';
 import 'package:tour_co/widgets/action_image_banner.dart';
 import '../../app.dart';
-import '../../models/location.dart';
 
-class ArticleList extends StatelessWidget {
+class JournalList extends StatelessWidget {
   final int _likes;
-  const ArticleList(this._likes, {super.key});
+  const JournalList(this._likes, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    final locations = Location.fetchAll();
+    final journals = Journal.fetchAll();
     String mes = _likes > 1
         ? 'Thanks for $_likes likes :)'
         : 'Thanks for $_likes like :)';
@@ -23,17 +23,17 @@ class ArticleList extends StatelessWidget {
         decoration: gradientBoxDec,
         child: ListView.builder(
           padding: const EdgeInsets.only(top: 15),
-          itemCount: locations.length,
+          itemCount: journals.length,
           itemBuilder: (context, index) =>
-              _itemBuilder(context, locations[index]),
+              _itemBuilder(context, journals[index]),
         ),
       ),
     );
   }
 
-  Widget _itemBuilder(BuildContext context, Location location) {
+  Widget _itemBuilder(BuildContext context, Journal journal) {
     return GestureDetector(
-      onTap: () => _onLocationTap(context, location.id),
+      onTap: () => _onLocationTap(context, journal.id),
       child: Container(
         padding: const EdgeInsets.fromLTRB(2, 2, 2, 0),
         child: SizedBox(
@@ -46,13 +46,13 @@ class ArticleList extends StatelessWidget {
                 height: 25,
                 width: 250,
                 color: startScreenButton,
-                child: Text(location.name),
+                child: Text(journal.name),
               ),
               Container(
                 height: 300,
                 width: 300,
                 alignment: Alignment.bottomCenter,
-                child: ActionImageBanner(location.preImagePath),
+                child: ActionImageBanner(journal.preImagePath),
               )
             ],
           ),
@@ -62,7 +62,6 @@ class ArticleList extends StatelessWidget {
   }
 
   void _onLocationTap(BuildContext context, int localID) {
-    Navigator.pushNamed(context, mathCompArticleRoute,
-        arguments: {"id": localID});
+    Navigator.pushNamed(context, testJournalRoute, arguments: {"id": localID});
   }
 }
