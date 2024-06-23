@@ -12,43 +12,43 @@ class Location {
 
 const locations = [
   Location(
+    name: 'Cairo',
+    place: 'Egypt',
+    imageUrl: 'art_images_parallax/treeUp_1920x1280.webp',
+  ),
+  Location(
     name: 'Thatcher Woods',
     place: 'U.S.A',
-    imageUrl: 'wetForest.jpeg',
-  ),
-  Location(
-    name: 'Gardens By The Bay',
-    place: 'Singapore',
-    imageUrl: 'HammockView.jpeg',
-  ),
-  Location(
-    name: 'Machu Picchu',
-    place: 'Peru',
-    imageUrl: 'HumboldtParkPond.jpeg',
-  ),
-  Location(
-    name: 'Vitznau',
-    place: 'Switzerland',
-    imageUrl: 'MountainsFromOldRanchRoad.jpeg',
-  ),
-  Location(
-    name: 'Jokulsarlon',
-    place: 'Iceland',
-    imageUrl: 'JokulsarlonIceland.jpg',
-  ),
-  Location(
-    name: 'Bali',
-    place: 'Indonesia',
-    imageUrl: 'NokomisFromGreenBenches.jpeg',
-  ),
-  Location(
-    name: 'Mexico City',
-    place: 'Mexico',
-    imageUrl: 'cc_view.jpeg',
+    imageUrl: 'art_images_parallax/by_1920x1280.webp',
   ),
   Location(
     name: 'Cairo',
     place: 'Egypt',
-    imageUrl: 'rooftopFarm.jpeg',
+    imageUrl: 'art_images_parallax/door_1920x1280.webp',
+  ),
+  Location(
+    name: 'Gardens By The Bay',
+    place: 'Singapore',
+    imageUrl: 'art_images_parallax/firePlace_1920x1280.webp',
+  ),
+  Location(
+    name: 'Cairo',
+    place: 'Egypt',
+    imageUrl: 'art_images_parallax/bush_1920x1280.webp',
+  ),
+  Location(
+    name: 'Thatcher Woods',
+    place: 'U.S.A',
+    imageUrl: 'art_images_parallax/by_1920x1280.webp',
+  ),
+  Location(
+    name: 'Cairo',
+    place: 'Egypt',
+    imageUrl: 'art_images_parallax/door_1920x1280.webp',
+  ),
+  Location(
+    name: 'Gardens By The Bay',
+    place: 'Singapore',
+    imageUrl: 'art_images_parallax/firePlace_1920x1280.webp',
   ),
 ];
