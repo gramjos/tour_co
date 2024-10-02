@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tour_co/screens/art_work_list/art_works/egypt.dart';
 import 'package:tour_co/screens/art_work_list/para.dart';
+import 'package:tour_co/widgets/md_Viewer.dart';
 
 class LocationListItem extends StatelessWidget {
   LocationListItem({
@@ -30,7 +30,9 @@ class LocationListItem extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const WelcomePage(),
+                    builder: (context) => const MDViewer(
+                      title: 'loook',
+                    ),
                   ),
                 );
               },
