@@ -181,13 +181,9 @@ class StartPage extends StatelessWidget {
                   children: [
                     MouseRegion(
                       onEnter: (PointerEnterEvent event) {
-                        final logger = Logger();
-                        logger.d("logging here");
                         likeCounter.toggle();
                       },
                       onExit: (PointerExitEvent event) {
-                        final logger = Logger();
-                        logger.d("logging here");
                         likeCounter.toggle();
                       },
                       child: Container(
