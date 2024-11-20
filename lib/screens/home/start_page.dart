@@ -1,3 +1,4 @@
+import 'package:tour_co/widgets/my_rive_animation.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
@@ -285,6 +286,11 @@ class StartPage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 16),
+                      const SizedBox(
+                        height: 333,
+                        width: 333,
+                        child: MyRiveAnimation(),
+                      ),
                     ],
                   ),
                 ),
